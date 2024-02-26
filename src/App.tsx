@@ -1,11 +1,14 @@
-import React from 'react'
+import AllRouter from "./routes/AllRouter";
+import GlobalStyles from "./GlobalStyles";
+import Container from "./layout/Container";
 
-type Props = {}
-
-const App = (props: Props) => {
+const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <Container>
+      <GlobalStyles />
+      <AllRouter />
+    </Container>
+  );
+};
 
-export default App
+export default App;

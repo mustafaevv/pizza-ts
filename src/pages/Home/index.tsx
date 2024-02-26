@@ -1,13 +1,16 @@
 import React from 'react'
 import styled from "styled-components";
+import Main from '../../components/Main';
 
 const Section = styled.section`
-  background: red;
+
 `
 
 const Home = () => {
   return (
-    <Section>home</Section>
+    <Section>
+      <Main/>
+    </Section>
   )
 }
 
