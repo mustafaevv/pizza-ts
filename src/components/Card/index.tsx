@@ -72,7 +72,7 @@ const BlockPrice = styled.p`
 const BlockBtn = styled.p`
   width: 135px;
   line-height: 40px;
-  background: #FE5F1E;
+  background: #fe5f1e;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -83,7 +83,6 @@ const BlockBtn = styled.p`
   border-radius: 30px;
 `;
 
-
 const Card: React.FC<CardProps> = ({ item }) => {
   return (
     <Block>
@@ -92,12 +91,12 @@ const Card: React.FC<CardProps> = ({ item }) => {
       <BlockMain>
         <BlockTypesAndSize>
           {item.types.map((type) => (
-            <BlockTypesAndSizeBtn>{type}</BlockTypesAndSizeBtn>
+            <BlockTypesAndSizeBtn key={type}>{type}</BlockTypesAndSizeBtn>
           ))}
         </BlockTypesAndSize>
         <BlockTypesAndSize>
           {item.sizes.map((size) => (
-            <BlockTypesAndSizeBtn>{size} см</BlockTypesAndSizeBtn>
+            <BlockTypesAndSizeBtn key={size}>{size} см</BlockTypesAndSizeBtn>
           ))}
         </BlockTypesAndSize>
       </BlockMain>

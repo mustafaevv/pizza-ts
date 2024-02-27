@@ -1,9 +1,16 @@
-
+import { Link } from "react-router-dom";
+import links from "../../routes";
 
 const CategoriesButton = () => {
   return (
-    <div>CategoriesButton</div>
-  )
-}
+    <div>
+      {links.map(({ id, name, link }) => (
+        <Link to={link} key={id}>
+          {name}
+        </Link>
+      ))}
+    </div>
+  );
+};
 
-export default CategoriesButton
+export default CategoriesButton;

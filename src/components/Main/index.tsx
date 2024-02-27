@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import CategoriesButton from "../CategoriesButton";
@@ -13,9 +13,6 @@ export interface CartITem {
   price: number;
   category: string;
 }
-export interface Category {
-  categoryName: string;
-}
 
 const Content = styled.div`
   display: flex;
@@ -29,12 +26,11 @@ const Title = styled.h1`
   font-weight: bold;
   color: #000;
   margin: 55px 0;
-`
+`;
 
-const Main = () => {
-  const [data, setData] = useState<CartITem[] | null>(null);
-  const [category, setCategory] = useState<Category[]>([])
 
+const Main: React.FC = () => {
+  const [data, setData] = useState<CartITem[]>([]);
   useEffect(() => {
     const getData = async () => {
       const res = await fetch(
@@ -44,13 +40,15 @@ const Main = () => {
       setData(data);
     };
     getData();
-  }, []);
+  }, [data]);
 
   return (
     <section>
       <CategoriesButton />
       <Title>Все пиццы</Title>
-      <Content>{data && data.map((cart) => <Card item={cart} />)}</Content>
+      <Content>
+        {data && data.map((cart) => <Card key={cart.id} item={cart} />)}
+      </Content>
     </section>
   );
 };
