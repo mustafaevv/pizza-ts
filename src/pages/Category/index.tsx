@@ -6,6 +6,13 @@ import { CartITem } from "../../components/Main";
 import Card from "../../components/Card";
 import CategoriesButton from "../../components/CategoriesButton";
 
+const Content = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+
 const Title = styled.h1`
   font-size: 36px;
   font-weight: bold;
@@ -29,11 +36,11 @@ const Category = () => {
 
   return (
     <>
-      <Title>Все пиццы</Title>
       <CategoriesButton />
-      <div>
+      <Title>Все пиццы</Title>
+      <Content>
         {data && data.map((cart) => <Card key={cart.id} item={cart} />)}
-      </div>
+      </Content>
     </>
   );
 };

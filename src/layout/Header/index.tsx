@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderBlock = styled.header`
@@ -7,7 +8,7 @@ const HeaderBlock = styled.header`
   margin-bottom: 80px;
 `;
 
-const HeaderLogo = styled.a`
+const HeaderLogo = styled(Link)`
   display: flex;
   flex-direction: column;
   font-size: 24px;
@@ -24,7 +25,7 @@ const HeaderLogo = styled.a`
   }
 `;
 
-const HeaderCartBtn = styled.a`
+const HeaderCartBtn = styled(Link)`
   background: #fe5f1e;
   max-width: 150px;
   width: 100%;
@@ -40,10 +41,10 @@ const HeaderCartBtn = styled.a`
 const Header = () => {
   return (
     <HeaderBlock>
-      <HeaderLogo href="">
+      <HeaderLogo to="/">
         react pizza <span>самая вкусная пицца во вселенной</span>{" "}
       </HeaderLogo>
-      <HeaderCartBtn href="">asdasd</HeaderCartBtn>
+      <HeaderCartBtn to="/cart">asdasd</HeaderCartBtn>
     </HeaderBlock>
   );
 };

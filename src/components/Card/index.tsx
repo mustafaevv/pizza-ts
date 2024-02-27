@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 import { CartITem } from "../Main";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cart";
 
 interface CardProps {
   item: CartITem;
@@ -84,6 +86,9 @@ const BlockBtn = styled.p`
 `;
 
 const Card: React.FC<CardProps> = ({ item }) => {
+  const dispatch = useDispatch();
+  const handleClick = () => {
+  };
   return (
     <Block>
       <BlockImage src={item.image} alt="" />
@@ -102,7 +107,7 @@ const Card: React.FC<CardProps> = ({ item }) => {
       </BlockMain>
       <BlockBottom>
         <BlockPrice>от {item.price} ₽</BlockPrice>
-        <BlockBtn>+ Добавить</BlockBtn>
+        <BlockBtn onClick={handleClick}>+ Добавить</BlockBtn>
       </BlockBottom>
     </Block>
   );

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import CategoriesButton from "../CategoriesButton";
 import Card from "../Card";
 
+
 export interface CartITem {
   id: number;
   name: string;
